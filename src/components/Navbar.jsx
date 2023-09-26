@@ -2,23 +2,15 @@ import { useState } from "react";
 import cartIcon from "../assets/images/icon-cart.svg";
 import avatar from "../assets/images/image-avatar.png";
 import logo from "../assets/images/logo.svg";
+import Cart from "./Cart";
 
-const Navbar = () => {
-  const [isCartOpen, setIsCartOpen] = useState(false);
-
-  const handleCart = () => {
-    setIsCartOpen(true);
-  };
-
-  const closeCart = () => {
-    setIsCartOpen(false);
-  };
+const Navbar = ({ quantity, isCartOpen, handleCart, closeCart }) => {
 
   return (
-    <div className="flex justify-between h-24 border-b-[1px] items-center font-kumbh">
+    <div className="flex justify-between h-24 border-b-[1px] items-center font-kumbh md:px-0 px-3">
       <div className="flex">
         <img src={logo} alt="logo" className="w-40 h-6 mr-16" />
-        <ul className="flex space-x-3 text-black-75">
+        <ul className="md:flex hidden space-x-3 text-black-75">
           <li>Collections</li>
           <li>Men</li>
           <li>Women</li>
@@ -26,7 +18,7 @@ const Navbar = () => {
           <li>Contact</li>
         </ul>
       </div>
-      <div className="flex items-center space-x-6">
+      <div className="flex items-center md:space-x-6 space-x-3">
         <img
           src={cartIcon}
           alt="cart icon"
@@ -36,24 +28,10 @@ const Navbar = () => {
         <img
           src={avatar}
           alt="avatar"
-          className="h-12 w-12 border-orange border-2 rounded-full"
+          className="md:h-12 md:w-12 h-8 w-8 border-orange border-2 rounded-full"
         />
       </div>
-      {isCartOpen && (
-        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50">
-          <div className="bg-white p-8 rounded-lg">
-            {/* Cart content goes here */}
-            <h2 className="text-2xl font-bold mb-4">Your Cart</h2>
-            {/* Add cart items and total here */}
-            <button
-              onClick={closeCart}
-              className="bg-slate-200 px-4 py-2 rounded-lg"
-            >
-              Close Cart
-            </button>
-          </div>
-        </div>
-      )}
+      {isCartOpen && <Cart quantity={quantity} closeCart={closeCart} />}
     </div>
   );
 };
