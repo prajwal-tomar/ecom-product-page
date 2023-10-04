@@ -1,16 +1,17 @@
-import { useState } from "react";
 import cartIcon from "../assets/images/icon-cart.svg";
 import avatar from "../assets/images/image-avatar.png";
 import logo from "../assets/images/logo.svg";
+import menuIcon from "../assets/images/icon-menu.svg";
 import Cart from "./Cart";
 
 const Navbar = ({ quantity, isCartOpen, handleCart, closeCart }) => {
 
   return (
     <div className="flex justify-between h-24 border-b-[1px] items-center font-kumbh md:px-0 px-3">
-      <div className="flex">
-        <img src={logo} alt="logo" className="w-40 h-6 mr-16" />
-        <ul className="md:flex hidden space-x-3 text-black-75">
+      <div className="flex hover:cursor-pointer items-center">
+        <img src={menuIcon} alt="hamburger" className="h-4 w-4 mr-3 md:hidden" />
+        <img src={logo} alt="logo" className="w-40 h-6 md:mr-16" />
+        <ul className="md:flex hidden space-x-3 text-black-75 hover:cursor-pointer">
           <li>Collections</li>
           <li>Men</li>
           <li>Women</li>
