@@ -8,7 +8,7 @@ const Cart = ({ quantity, closeCart }) => {
         <h1 className="text-md font-bold">Cart</h1>
         <img src={close} alt="cart close" onClick={closeCart} />
       </div>
-      <hr />
+      <hr className="mb-3" />
       <div className="flex items-center justify-center h-full w-full">
         {quantity === 0 ? (
           <h1 className="text-slate-500">Your cart is empty.</h1>

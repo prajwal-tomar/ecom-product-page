@@ -66,7 +66,7 @@ const Dashboard = ({
           </div>
           <p className="line-through md:text-lg font-bold text-slate-400">$250.00</p>
         </div>
-        <div className="flex md:flex-row items-center md:space-x-3 space-y-3 flex-col md:w-[70%] w-[100%] mb-10">
+        <div className="flex md:flex-row items-center md:space-x-3 md:space-y-0 space-y-3 flex-col md:w-[70%] w-[100%] mb-10">
           <div className="md:w-80 w-full h-14 bg-slate-100 rounded-xl flex items-center justify-evenly hover:cursor-pointer">
             <img src={iconMinus} alt="iconMinus" onClick={decreaseQuantity} />
             <h1>{quantity}</h1>
@@ -76,7 +76,7 @@ const Dashboard = ({
             className="flex md:flex-row  bg-orange px-4 py-4 rounded-xl space-x-3 w-full items-center justify-center hover:cursor-pointer"
             onClick={handleCart}
           >
-            <img src={cartIcon} alt="cart icon" />
+            <img src={cartIcon} alt="cart icon"/>
             <span className="text-center text-white font-bold">
               Add to cart
             </span>
